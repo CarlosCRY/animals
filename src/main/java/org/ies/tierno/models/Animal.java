@@ -5,6 +5,15 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class Animal {
-    private final name;
+public abstract class Animal {
+    protected String name;
+    protected int age;
+
+    protected abstract void talk ();
+
+    protected abstract void showInfo ();
+
+    protected void showAnimalInfo () {
+        System.out.print("\nNombre: " + name + ", edad: " + age);
+    }
 }
