@@ -6,7 +6,7 @@ import org.ies.tierno.models.Animal;
 import java.util.Scanner;
 
 @AllArgsConstructor
-public  class AnimalReader {
+public class AnimalReader {
     private final Scanner scanner;
     private final DogReader dogReader;
     private final CatReader catReader;

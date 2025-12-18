@@ -1,22 +1,26 @@
 package org.ies.tierno;
 
-import org.ies.tierno.models.Cat;
-import org.ies.tierno.models.Dog;
-import org.ies.tierno.models.Pig;
+import org.ies.tierno.models.Animal;
+import org.ies.tierno.readers.AnimalReader;
+import org.ies.tierno.readers.DogReader;
+import org.ies.tierno.readers.CatReader;
+import org.ies.tierno.readers.PigReader;
+
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Cat cat = new Cat ("Garfield", 47, "Atigrado");
-        Dog dog = new Dog ("Dogbert", 36, "Supremacista");
-        Pig pig = new Pig ("Capitalista", 249, "Dinero");
+        Scanner scanner = new Scanner(System.in);
+        DogReader dogReader = new DogReader(scanner);
+        CatReader catReader = new CatReader(scanner);
+        PigReader pigReader = new PigReader(scanner);
+        AnimalReader animalReader = new AnimalReader(scanner, dogReader, catReader, pigReader);
 
-        cat.showInfo();
-        cat.talk();
+        Animal animal = animalReader.read();
 
-        dog.showInfo();
-        dog.talk();
+        animal.showInfo();
+        animal.talk();
 
-        pig.showInfo();
-        pig.talk();
+
     }
 }
