@@ -9,9 +9,9 @@ public abstract class Animal {
     protected String name;
     protected int age;
 
-    protected abstract void talk ();
+    public abstract void talk ();
 
-    protected abstract void showInfo ();
+    public abstract void showInfo ();
 
     protected void showAnimalInfo () {
         System.out.print("\nNombre: " + name + ", edad: " + age);
